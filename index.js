@@ -4,6 +4,7 @@ const chalk = require('chalk')
 var userName = readlineSync.question("What's your name?\n ")
 var score =0;
 console.log(chalk.redBright("welcome "+userName+ " in world war quiz?"))
+console.log(chalk.redBright("Enter only the choice option eg. a/b/c/d"))
 
 
 var questionOne = {
@@ -52,12 +53,13 @@ var q10 = {
 function quiz(question,answer){
   var userAnswer = readlineSync.question(question)
   if(userAnswer  === answer){
-    console.log(chalk.blue(answer +" is Right Answer."));
+    console.log(chalk.blue(userAnswer +" is Right Answer."));
     score+=1;
     console.log("your current score is "+ score)
   }
   else{
     console.log(chalk.redBright("THis is wrong answer."));
+    console.log(chalk.redBright("The Right answer is " + answer));
     console.log(chalk.blue("your current score is " + score))
   }
 }
